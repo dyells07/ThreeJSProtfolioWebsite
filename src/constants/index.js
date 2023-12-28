@@ -15,10 +15,57 @@ import {
     summiz,
     tailwindcss,
     threads,
-    typescript
+    typescript,
+    Sql,
+    dotnet,
+    jquery,
+    python,
+    django,
+    scikit,
+    bootstrap
 } from "../assets/icons";
 
 export const skills = [
+    {
+        imageUrl: dotnet,
+        name: "Dotnet",
+        type: "Backend",
+    },
+    {
+        imageUrl: Sql,
+        name: "Sql",
+        type: "Backend",
+    },
+    {
+        imageUrl: jquery,
+        name: "JQuery",
+        type: "Frontend",
+    },
+    {
+        imageUrl: scikit,
+        name: "Scikit Learn",
+        type: "Machine Learning",
+    },
+    {
+        imageUrl: python,
+        name: "Python",
+        type: "Backend",
+    },
+    {
+        imageUrl: django,
+        name: "Django",
+        type: "Backend",
+    },
+    {
+        imageUrl: javascript,
+        name: "JavaScript",
+        type: "Frontend",
+    },
+    {
+        imageUrl: bootstrap,
+        name: "Bootstrap",
+        type: "Frontend",
+    },
     {
         imageUrl: css,
         name: "CSS",
@@ -39,11 +86,7 @@ export const skills = [
         name: "HTML",
         type: "Frontend",
     },
-    {
-        imageUrl: javascript,
-        name: "JavaScript",
-        type: "Frontend",
-    },
+
     {
         imageUrl: react,
         name: "React",
@@ -58,7 +101,10 @@ export const skills = [
         imageUrl: typescript,
         name: "TypeScript",
         type: "Frontend",
-    }
+    },
+
+
+    
 ];
 
 export const experiences = [

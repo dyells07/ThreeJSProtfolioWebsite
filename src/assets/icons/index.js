@@ -26,6 +26,13 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import Sql from './SqlServer.svg'
+import dotnet from './dotnet.svg'
+import jquery from './jquery.svg'
+import python from './python.svg'
+import django from './django.svg'
+import scikit from './scikit-learn.svg'
+import bootstrap from './bootstrap.svg'
 
 export {
     css,
@@ -55,5 +62,14 @@ export {
     arrow,
     contact,
     soundon,
-    soundoff
+    soundoff,
+    Sql,
+    dotnet,
+    jquery,
+    python,
+    django,
+    scikit,
+    bootstrap
+
+
 }
