@@ -70,6 +70,4 @@ export {
     django,
     scikit,
     bootstrap
-
-
 }

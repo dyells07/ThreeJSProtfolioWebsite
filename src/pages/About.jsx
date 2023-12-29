@@ -21,7 +21,11 @@ const About = () => {
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
         <p>
-          Software Developer From Pokhara,Nepal
+        Hello! My name is Bipin Khanal. I am an undergradute Computer Science and Information Technology (CSIT) student. I am currently pursuing my Bachelor's degree from Tribhuvan University. I am passionate about web application development. I have some experience in using various web development tools and technologies to create web applications and webistes.
+<br></br><br></br>
+I enjoy the challenge of learning new technologies and applying them to create meaningful and impactful webpages and applications.I have a good understanding of ASP.Net MVC,Multi Tier Architecture of Web Application Development,Jquery, HTML, CSS, JavaScript, and little bit of PHP. I am also familiar with the Bootstrap framework. I am also familiar with Python and Django framework and have some experience with it.
+<br></br><br></br>
+I'm on the lookout for a job opportunity where I can apply my skills and knowledge to create meaningful and impactful webpages and applications and also learn new skills and stay up to date with the latest technologies.I am a fast learner and a hard worker. I am also a team player.Overall,I am excited about the prospect of working in a challenging and dynamic environment where I can learn and grow.
         </p>
       </div>
 
