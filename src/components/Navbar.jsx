@@ -4,7 +4,7 @@ import { logo } from "../assets/images";
 
 const Navbar = () => {
   return (
-    <header className='header'>
+    <header className='header sticky top-0 z-10'>
       <NavLink to='/'>
     <img
   src={logo}

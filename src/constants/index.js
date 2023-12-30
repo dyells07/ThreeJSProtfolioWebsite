@@ -1,4 +1,4 @@
-import { meta, shopify, logo, CodeForChange,LogoInsoft } from "../assets/images";
+import { meta, shopify, logo, CodeForChange,LogoInsoft,MyImage} from "../assets/images";
 import {
     car,
     contact,
@@ -22,7 +22,9 @@ import {
     python,
     django,
     scikit,
-    bootstrap
+    bootstrap,
+    facebook,
+    instagram
 } from "../assets/icons";
 
 
@@ -121,35 +123,34 @@ export const experiences = [
         iconBg: "#f3bf21",
         date: "Jan 2023 - Jan 2024",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Being a team member of IT students in the implementation of various technologies for Social Change.",
+            "Fostering a collaborative team environment, emphasizing teamwork, and providing mentorship to team members.",
+            "Utilizing graphic design skills to enhance the user interface and overall user experience of web applications.",
+            "Leveraging automation tools like AppScript and Power Automate for process optimization.",
         ],
+        website: "https://www.codeforchangenepal.com", 
     },
-
     {
         title: "Software Developer",
         company_name: "Insoft Research and Development",
-        icon: LogoInsoft ,
+        icon: LogoInsoft,
         iconBg: "#ffffff",
         date: "Jul 2023 - Present",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+            "Developing and maintaining web applications, including ERP systems, using ASP.NET, Web API, AJAX calls, jQuery, SQL, and payment integration.",
+            "Collaborating with cross-functional teams, including designers, product managers, and other developers, to create high-quality products.",
             "Implementing responsive design and ensuring cross-browser compatibility.",
             "Participating in code reviews and providing constructive feedback to other developers.",
+            "Managing server configuration and optimizing performance for efficient application delivery.",
+            "Contributing to the process of Android app development, ensuring seamless integration with web-based systems.",
         ],
+        website: "https://www.insoftnepal.com", 
     },
-
 ];
 
+
 export const socialLinks = [
-    {
-        name: 'Contact',
-        iconUrl: contact,
-        link: '/contact',
-    },
+
     {
         name: 'GitHub',
         iconUrl: github,
@@ -159,7 +160,17 @@ export const socialLinks = [
         name: 'LinkedIn',
         iconUrl: linkedin,
         link: 'https://www.linkedin.com/in/bipin-khanal-495617184/',
-    }
+    },
+    {
+        name: 'Facebook',
+        iconUrl: facebook,
+        link: 'https://www.facebook.com/dyells.07/',
+    },
+    {
+        name: 'Instagram',
+        iconUrl: instagram,
+        link: 'https://www.instagram.com/dy_ells/',
+    },
 ];
 
 export const fetchGithubProjects = async (username) => {

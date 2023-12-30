@@ -6,6 +6,7 @@ import tesla from './tesla.png'
 import logo from './logo.png'
 import CodeForChange from './CodeForChange.png'
 import LogoInsoft from './LogoInsoft.png'
+import MyImage from './logo.jpg'
 
 export {
     hero,
@@ -15,5 +16,6 @@ export {
     tesla,
     logo,
     CodeForChange,
-    LogoInsoft
+    LogoInsoft,
+    MyImage
 }

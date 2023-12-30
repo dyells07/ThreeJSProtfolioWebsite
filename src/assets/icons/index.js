@@ -33,8 +33,11 @@ import python from './python.svg'
 import django from './django.svg'
 import scikit from './scikit-learn.svg'
 import bootstrap from './bootstrap.svg'
-
+import facebook from './facebook.svg'
+import instagram from './instagram.svg'
 export {
+    instagram,
+    facebook,
     css,
     express,
     git,
