@@ -9,7 +9,7 @@ const Navbar = () => {
     <img
   src={logo}
   alt='logo'
-  className='w-9 h-9 object-contain rounded-full border border-gray-300'
+  className='w-40 h-12 object-contain'
 />
 
       </NavLink>

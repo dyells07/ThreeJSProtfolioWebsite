@@ -25,6 +25,12 @@ import {
     bootstrap
 } from "../assets/icons";
 
+
+const iconArray = [car, estate, pricewise, threads, Sql, dotnet, python, django, scikit, bootstrap];
+const randomIndex = Math.floor(Math.random() * iconArray.length);
+const randomizedArray = [...iconArray.slice(0, randomIndex), github, ...iconArray.slice(randomIndex)];
+
+
 export const skills = [
     {
         imageUrl: dotnet,
@@ -156,47 +162,28 @@ export const socialLinks = [
     }
 ];
 
-export const projects = [
-    {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
-    },
-    {
-        iconUrl: threads,
-        theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
-    },
-    {
-        iconUrl: car,
-        theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
-    },
-    {
-        iconUrl: snapgram,
-        theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
-    },
-    {
-        iconUrl: estate,
-        theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
-    },
-    {
-        iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
+export const fetchGithubProjects = async (username) => {
+    try {
+      const response = await fetch(`https://api.github.com/users/${username}/repos`);
+      if (response.ok) {
+        const repoData = await response.json();
+        repoData.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+  
+        return repoData.map((repo) => ({
+          iconUrl : snapgram,
+          theme: 'btn-back-default', 
+          name: repo.name,
+          description: repo.description || 'No description available',
+          link: repo.html_url,
+        }));
+      } else {
+        throw new Error('Failed to fetch repository data');
+      }
+    } catch (error) {
+      console.error(error);
+      return [];
     }
-];
+  };
+
+  export const projects = await fetchGithubProjects(import.meta.env.VITE_APP_GITHUB_USERNAME);
+  
