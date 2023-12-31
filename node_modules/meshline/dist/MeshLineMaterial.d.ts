@@ -6,6 +6,7 @@ export interface MeshLineMaterialParameters {
     alphaMap?: THREE.Texture;
     useAlphaMap?: number;
     color?: string | THREE.Color | number;
+    gradient?: string[] | THREE.Color[] | number[];
     opacity?: number;
     resolution: THREE.Vector2;
     sizeAttenuation?: number;
@@ -13,6 +14,7 @@ export interface MeshLineMaterialParameters {
     dashOffset?: number;
     dashRatio?: number;
     useDash?: number;
+    useGradient?: number;
     visibility?: number;
     alphaTest?: number;
     repeat?: THREE.Vector2;
@@ -24,6 +26,7 @@ export declare class MeshLineMaterial extends THREE.ShaderMaterial implements Me
     alphaMap: THREE.Texture;
     useAlphaMap: number;
     color: THREE.Color;
+    gradient: THREE.Color[];
     opacity: number;
     resolution: THREE.Vector2;
     sizeAttenuation: number;
@@ -31,6 +34,7 @@ export declare class MeshLineMaterial extends THREE.ShaderMaterial implements Me
     dashOffset: number;
     dashRatio: number;
     useDash: number;
+    useGradient: number;
     visibility: number;
     alphaTest: number;
     repeat: THREE.Vector2;

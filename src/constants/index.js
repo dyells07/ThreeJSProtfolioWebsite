@@ -1,4 +1,5 @@
 import { meta, shopify, logo, CodeForChange,LogoInsoft,MyImage} from "../assets/images";
+import axios from 'axios';
 import {
     car,
     contact,
@@ -173,28 +174,98 @@ export const socialLinks = [
     },
 ];
 
-export const fetchGithubProjects = async (username) => {
-    try {
-      const response = await fetch(`https://api.github.com/users/${username}/repos`);
-      if (response.ok) {
-        const repoData = await response.json();
-        repoData.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+// export const fetchGithubProjects = async (username) => {
+//     try {
+//       const response =  await fetch(`https://api.github.com/users/${username}/repos`);
+//       if (response.ok) {
+//         const repoData =  await response.json();
+//         repoData.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
   
-        return repoData.map((repo) => ({
-          iconUrl : snapgram,
-          theme: 'btn-back-default', 
-          name: repo.name,
-          description: repo.description || 'No description available',
-          link: repo.html_url,
-        }));
-      } else {
-        throw new Error('Failed to fetch repository data');
-      }
-    } catch (error) {
-      console.error(error);
-      return [];
-    }
-  };
+//         return repoData.map((repo) => ({
+//           iconUrl : snapgram,
+//           theme: 'btn-back-default', 
+//           name: repo.name,
+//           description: repo.description || 'No description available',
+//           link: repo.html_url,
+//         }));
+//       } else {
+//         throw new Error('Failed to fetch repository data');
+//       }
+//     } catch (error) {
+//       console.error(error);
+//       return [];
+//     }
+//   };
 
-  export const projects = await fetchGithubProjects(import.meta.env.VITE_APP_GITHUB_USERNAME);
+//   export const projects =  await fetchGithubProjects(import.meta.env.VITE_APP_GITHUB_USERNAME);
+
+
+// export const fetchGithubProjects = (username) => {
+//   return axios.get(`https://api.github.com/users/${username}/repos`)
+//     .then((response) => {
+//       if (response.status === 200) {
+//         const repoData = response.data;
+//         repoData.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+//         return repoData.map((repo) => ({
+//           iconUrl: snapgram,
+//           theme: 'btn-back-default',
+//           name: repo.name,
+//           description: repo.description || 'No description available',
+//           link: repo.html_url,
+//         }));
+//       } else {
+//         throw new Error('Failed to fetch repository data');
+//       }
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//       return [];
+//     });
+// };
+
+// export let projects;
+// fetchGithubProjects(import.meta.env.VITE_APP_GITHUB_USERNAME)
+//   .then((result) => {
+//     projects = result;
+//   });
+
+  
+  
+
+export const fetchGithubProjects = (username) => {
+    return axios.get(`https://api.github.com/users/${username}/repos`)
+      .then((response) => {
+        if (response.status === 200) {
+          const repoData = response.data;
+          repoData.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+  
+          const projects = repoData.map((repo) => ({
+            iconUrl: snapgram,
+            theme: 'btn-back-default',
+            name: repo.name,
+            description: repo.description || 'No description available',
+            link: repo.html_url,
+          }));
+          localStorage.setItem('MyProjects', JSON.stringify(projects));
+  
+          return projects;
+        } else {
+          throw new Error('Failed to fetch repository data');
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        return [];
+      });
+  };
+  
+  export let projects = JSON.parse(localStorage.getItem('MyProjectsgi')) || [];
+  
+  if (projects.length === 0) {
+    fetchGithubProjects(import.meta.env.VITE_APP_GITHUB_USERNAME)
+      .then((result) => {
+        projects = result;
+      });
+  }
   
